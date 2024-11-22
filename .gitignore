@@ -1,0 +1,31 @@
+# For Vuejs
+# Logs
+/vuejs-frontend/logs
+*.log
+/vuejs-frontend/npm-debug.log*
+/vuejs-frontend/yarn-debug.log*
+/vuejs-frontend/yarn-error.log*
+/vuejs-frontend/pnpm-debug.log*
+/vuejs-frontend/lerna-debug.log*
+
+/vuejs-frontend/node_modules
+.DS_Store
+/vuejs-frontend/dist
+/vuejs-frontend/dist-ssr
+/vuejs-frontend/coverage
+*.local
+
+/vuejs-frontend/cypress/videos/
+/vuejs-frontend/cypress/screenshots/
+
+# Editor directories and files
+/vuejs-frontend/.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+*.tsbuildinfo
