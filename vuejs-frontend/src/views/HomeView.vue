@@ -1,9 +1,9 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import FormResult from '../components/FormResult.vue'
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <FormResult />
   </main>
 </template>
