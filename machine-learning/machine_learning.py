@@ -94,5 +94,5 @@ class MLModels:
             cls.ml_model = pickle.load(f)
 
 
-MLModels.test_and_evaluate()
-print('Prediction test: ', MLModels.ml_model.predict([[2.4, 1.8, 5.1, 4.2]]))
+# MLModels.test_and_evaluate()
+# print('Prediction test: ', MLModels.ml_model.predict([[2.4, 1.8, 5.1, 4.2]]))
