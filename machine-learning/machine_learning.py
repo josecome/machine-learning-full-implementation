@@ -79,7 +79,7 @@ class MLModels:
         r24 = r2_score(cls.y_test, y_pred4)
         print(accuracy4, mse4, mae4, r24)
 
-        # Later only the model with the best accuracy will be saved
+        # Later only the model with the best performance will be saved
         # Model to be used
         cls.ml_model = clf1
 
