@@ -1,6 +1,13 @@
 # Machine Learning Models
 from sklearn.model_selection import train_test_split
 from sklearn import datasets, svm
+from sklearn.metrics import (
+    mean_squared_error,
+    mean_absolute_error,
+    r2_score,
+    accuracy_score,
+)
+
 #Models
 
 # SVM (with iris dataset)
@@ -25,9 +32,33 @@ models = list(clf.fit(X_train, y_train) for clf in models)
 
 clf1, clf2, clf3, clf4 = models
 
-clf1.predict(X_test)
-clf2.predict(X_test)
-clf3.predict(X_test)
-clf4.predict(X_test)
+y_pred1 = clf1.predict(X_test)
+y_pred2 = clf2.predict(X_test)
+y_pred3 = clf3.predict(X_test)
+y_pred4 = clf4.predict(X_test)
 
+# Evaluate the model
 
+# Model 1
+accuracy = accuracy_score(y_test, y_pred1)
+mse1 = mean_squared_error(y_test, y_pred1)
+mae1 = mean_absolute_error(y_test, y_pred1)
+r21 = r2_score(y_test, y_pred1)
+
+# Model 2
+accuracy = accuracy_score(y_test, y_pred2)
+mse2 = mean_squared_error(y_test, y_pred2)
+mae2 = mean_absolute_error(y_test, y_pred2)
+r22 = r2_score(y_test, y_pred2)
+
+# Model 3
+accuracy = accuracy_score(y_test, y_pred3)
+mse3 = mean_squared_error(y_test, y_pred3)
+mae3 = mean_absolute_error(y_test, y_pred3)
+r23 = r2_score(y_test, y_pred3)
+
+# Model 4
+accuracy = accuracy_score(y_test, y_pred4)
+mse4 = mean_squared_error(y_test, y_pred4)
+mae4 = mean_absolute_error(y_test, y_pred4)
+r24 = r2_score(y_test, y_pred4)
