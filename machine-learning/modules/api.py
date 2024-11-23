@@ -3,9 +3,14 @@ from flask import request, jsonify
 from machine_learning import MLModels
 
 
+@app.route("/api/train_test_evaluate_model/", methods=["POST"])
 def train_test_evaluate_model():
     MLModels.test_and_evaluate()
-    print('Prediction test: ', MLModels.ml_model.predict([[2.4, 1.8, 5.1, 4.2]]))
+    test = MLModels.ml_model.predict([[2.4, 1.8, 5.1, 4.2]])
+    print('Prediction test: ', test)
+    params = ""
+
+    return jsonify({"test:": test, "params": params})
 
 
 @app.route("/api/ml_predict/", methods=["POST"])
