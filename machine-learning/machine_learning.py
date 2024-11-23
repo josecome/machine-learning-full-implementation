@@ -7,11 +7,14 @@ from sklearn.metrics import (
     r2_score,
     accuracy_score,
 )
+import pickle
+
 
 #Models
 class MLModels:
     X_test = None
     y_test = None
+    ml_model = None
 
     def load_data():
         # SVM (with iris dataset)
@@ -76,5 +79,20 @@ class MLModels:
         r24 = r2_score(cls.y_test, y_pred4)
         print(accuracy4, mse4, mae4, r24)
 
+        # Later only the model with the best accuracy will be saved
+        # Model to be used
+        cls.ml_model = clf1
+
+        # Save the model
+        with open('model.pkl', 'wb') as f:
+            pickle.dump(clf1, f) 
+
+
+    @classmethod
+    def load_model(cls):
+        with open('model.pkl', 'rb') as f:
+            cls.ml_model = pickle.load(f)
+
 
 MLModels.test_and_evaluate()
+print('Prediction test: ', MLModels.ml_model.predict([[2.4, 1.8, 5.1, 4.2]]))
