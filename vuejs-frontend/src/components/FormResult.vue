@@ -1,5 +1,6 @@
 <template>
   <h1>Home Page</h1>
+  <form @submit.prevent>
   <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon1">Full Name</span>
   <input type="text" class="form-control" placeholder="Full Name" aria-label="Fullname" aria-describedby="basic-addon1">
@@ -14,19 +15,19 @@
   <tr>
     <td><strong>Sepal</strong></td>
     <td>
-      <input type="text" class="form-control" aria-describedby="basic-addon1">
+      <input type="text" class="form-control" name="sepal_length" id="sepal_length" aria-describedby="basic-addon1">
     </td>
     <td>
-      <input type="text" class="form-control" aria-describedby="basic-addon1">
+      <input type="text" class="form-control" name="sepal_width" id="sepal_width" aria-describedby="basic-addon1">
     </td>
   </tr>
   <tr>
     <td><strong>Petal</strong></td>
     <td>
-      <input type="text" class="form-control" aria-describedby="basic-addon1">
+      <input type="text" class="form-control" name="petal_length" id="petal_length" aria-describedby="basic-addon1">
     </td>
     <td>
-      <input type="text" class="form-control" aria-describedby="basic-addon1">
+      <input type="text" class="form-control" name="petal_width" id="petal_width" aria-describedby="basic-addon1">
     </td>
   </tr>
   <tr>
@@ -35,6 +36,7 @@
     </td>
   </tr>
 </table>
+  </form>
 <div id="v"><span>Predicted Value: </span></div>
 </template>
 <style scoped>
