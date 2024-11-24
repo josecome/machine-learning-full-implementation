@@ -7,11 +7,11 @@ from machine_learning import MLModels
 def train_test_evaluate_model():
     data_type = float(request.form['data_type'])
     new_data = False
-    
+
     if(data_type == "1"):
         new_data = True
-
-    MLModels.test_and_evaluate()
+    
+    MLModels.test_and_evaluate(new_data)
     test = MLModels.ml_model.predict([[2.4, 1.8, 5.1, 4.2]])
     print('Prediction test: ', test)
     params = ""
