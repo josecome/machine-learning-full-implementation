@@ -32,18 +32,19 @@ class SnippetList(APIView):
 
         person_serializer = PersonSerializer(data = { **server_data, **person_data})
         if person_serializer.is_valid():
-            person_serializer.save()
+            person = person_serializer.save()
 
             preference_data = dict()
             preference_data['sepal_length'] = data['sepal_length']
             preference_data['sepal_width'] = data['sepal_width']
             preference_data['petal_length'] = data['petal_length']
             preference_data['petal_width'] = data['petal_width']
+            preference_data['person_id'] = person.id
 
             result = await ML.predictedValue(preference_data)
             preference_data['sel_variety'] = data['sel_variety']
             preference_data['pred_variety'] = result
-
+            
             preference_serializer = PreferenceSerializer(data = { **server_data, **preference_data})
             preference_serializer.save()
             
