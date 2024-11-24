@@ -7,18 +7,35 @@ from sklearn.metrics import (
     r2_score,
     accuracy_score,
 )
+import pandas as pd
 import pickle
 
+# Dataset
+class MLDataset():
+    def save_dataset(data):
+        pass
 
-#Models
+    def load_dataset():
+        pass
+
+
+# Models
 class MLModels:
     X_test = None
     y_test = None
     ml_model = None
 
-    def load_data():
+    def load_data(new_data):
+        iris = None
         # SVM (with iris dataset)
-        iris = datasets.load_iris()
+        if(new_data):
+            url = 'https://raw.githubusercontent.com/josecome/data-science-with-r-and-python/refs/heads/main/iris.csv'
+            iris = pd.read_csv(url, index_col=0)
+            # MLDataset.save_dataset(iris)
+        else:
+            iris = datasets.load_iris()
+            # iris = MLDataset.load_dataset()
+
         X = iris.data[:, :4]
         y = iris.target
 
@@ -26,8 +43,8 @@ class MLModels:
 
 
     @classmethod
-    def train_models(cls):
-        X_train, X_test, y_train, y_test = cls.load_data()
+    def train_models(cls, new_data):
+        X_train, X_test, y_train, y_test = cls.load_data(new_data)
         cls.X_test = X_test
         cls.y_test = y_test
 
@@ -42,8 +59,8 @@ class MLModels:
 
 
     @classmethod
-    def test_and_evaluate(cls):    
-        clf1, clf2, clf3, clf4 = cls.train_models()
+    def test_and_evaluate(cls, new_data):    
+        clf1, clf2, clf3, clf4 = cls.train_models(new_data)
 
         y_pred1 = clf1.predict(cls.X_test)
         y_pred2 = clf2.predict(cls.X_test)
@@ -94,5 +111,5 @@ class MLModels:
             cls.ml_model = pickle.load(f)
 
 
-# MLModels.test_and_evaluate()
+# MLModels.test_and_evaluate(False)
 # print('Prediction test: ', MLModels.ml_model.predict([[2.4, 1.8, 5.1, 4.2]]))
