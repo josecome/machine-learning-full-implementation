@@ -29,5 +29,20 @@
       <input type="text" class="form-control" aria-describedby="basic-addon1">
     </td>
   </tr>
+  <tr>
+    <td colspan="3">
+      <button class="btn btn-primary" type="submit">Submit</button>
+    </td>
+  </tr>
 </table>
+<div id="v"><span>Predicted Value: </span></div>
 </template>
+<style scoped>
+button, #v {
+  padding: 6px;
+  margin: 6px;
+}
+span {
+  font-size: 28px;
+}
+</style>
