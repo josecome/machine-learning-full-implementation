@@ -27,6 +27,7 @@ def api():
     v4 = float(request.form['v4'])
 
     if all(v is not None for v in [v1, v2, v3, v4]):
+        MLModels.load_model()
         return MLModels.ml_model.predict([[v1, v2, v3, v4]])
     
     return "Please, fill all fields!"
