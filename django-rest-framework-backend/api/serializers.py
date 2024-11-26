@@ -7,9 +7,9 @@ from main.models import (
 class PersonSerializer(serializers.ModelSerializer):
     class Meta:
         model = Person
-        fields = "__all__"
+        fields = ['first_name', 'last_name', 'created_date']
 
 class PreferenceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Preference
-        fields = "__all__"
+        fields = ['person_id', 'sel_variety']

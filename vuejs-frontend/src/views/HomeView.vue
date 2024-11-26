@@ -1,13 +1,12 @@
 <script setup>
 import FormResult from '../components/FormResult.vue'
-import { useStore } from '@/stores/store'
+import { Store } from '@/stores/store'
 import { storeToRefs } from 'pinia'
-const store = useStore()
-const { processRequest } = storeToRefs(store)
+const store = Store()
 </script>
 
 <template>
   <main>
-    <FormResult />
+    <FormResult @submit-form="store.processRequest" />
   </main>
 </template>

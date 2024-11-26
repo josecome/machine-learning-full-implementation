@@ -21,14 +21,28 @@ def train_test_evaluate_model():
 
 @app.route("/api/ml_predict/", methods=["POST"])
 def api():
-    v1 = float(request.form['v1'])
-    v2 = float(request.form['v2'])
-    v3 = float(request.form['v3'])
-    v4 = float(request.form['v4'])
+    data = dict(request.json)
+    v1 = float(data['v1'])
+    v2 = float(data['v2'])
+    v3 = float(data['v3'])
+    v4 = float(data['v4'])
 
-    if all(v is not None for v in [v1, v2, v3, v4]):
+    if all(v is not None for v in [v1, v2, v3, v4]):        
         MLModels.load_model()
-        return MLModels.ml_model.predict([[v1, v2, v3, v4]])
+        #return MLModels.ml_model.predict([[v1, v2, v3, v4]])[0]
+        
+        result = MLModels.ml_model.predict([[v1, v2, v3, v4]])[0]
+        print(result)
+        res = ''
+        match result:
+            case 0:
+                res = 'Setosa'
+            case 1:
+                res = 'Versicolor'
+            case 2:
+                res = 'Virginica'
+
+        return res
     
     return "Please, fill all fields!"
     
