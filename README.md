@@ -13,27 +13,31 @@ flask --app hello run
 ```
 
 ### Backend API (Django Rest Framework)
-### Running Migrations
+Running Migrations
 ```sh
 py manage.py makemigrations
 py manage.py migrate
 ```
-### Running Backend Application
+
+Running Backend Application
 ```sh
 py manage.py runserver
 ```
 
 ### Frontend API (Vuejs)
-## Project Setup
+### Project Setup
+Installation
 ```sh
 npm install
 ```
-### Compile and Hot-Reload for Development
+
+Compile and Hot-Reload for Development
 ```sh
 npm run dev
 ```
 Server will run on [http://127.0.0.1:5173]
-### Compile and Minify for Production
+
+Compile and Minify for Production
 ```sh
 npm run build
 ```
