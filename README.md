@@ -2,7 +2,7 @@
 This project aims to demostrate how to build Machine Learning Pipeline, integrate it to backend and frontend Applications.
 
 ## To run the project
-Machine Learning Pipeline
+### Machine Learning Pipeline
 ### Running Machine Learning Service
 ```sh
 py run.py
@@ -12,7 +12,7 @@ or
 flask --app hello run
 ```
 
-Backend API (Django Rest Framework)
+### Backend API (Django Rest Framework)
 ### Running Migrations
 ```sh
 py manage.py makemigrations
@@ -23,7 +23,7 @@ py manage.py migrate
 py manage.py runserver
 ```
 
-Frontend API (Vuejs)
+### Frontend API (Vuejs)
 ## Project Setup
 ```sh
 npm install
