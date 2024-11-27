@@ -3,7 +3,8 @@ This project aims to demostrate how to build Machine Learning Pipeline, integrat
 
 ## To run the project
 ### Machine Learning Pipeline
-### Running Machine Learning Service
+
+Running Machine Learning Service
 ```sh
 py run.py
 ```
