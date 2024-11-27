@@ -20,12 +20,12 @@ py manage.py makemigrations
 py manage.py migrate
 ```
 
-Running Backend Application
+Running API
 ```sh
 py manage.py runserver
 ```
 
-### Frontend API (Vuejs)
+### Frontend (Vuejs)
 ### Project Setup
 Installation
 ```sh
