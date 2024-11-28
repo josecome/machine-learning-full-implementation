@@ -1,6 +1,12 @@
 # machine-learning-full-implementation
 This project aims to demostrate how to build Machine Learning Pipeline, integrate it to backend and frontend Applications.
 
+## How it works
+The first case of many that will be included in this project has iris dataset for Machine Learning. Form is filled up in frontend application and 
+when the form is submitted the response of predicted value is displayed. The system store both selected and predicted value.
+Later these values are analysed and new data is ingested for training, testing, validation and deployment of new model in 
+aim of constantly improve the Machine Learning.
+
 ## To run the project
 ### Machine Learning Pipeline
 
