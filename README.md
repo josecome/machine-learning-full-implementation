@@ -7,6 +7,7 @@ The first case of many that will be included in this project has iris dataset fo
 when the form is submitted the response of predicted value is displayed. The system store both selected and predicted value.
 Later these values are analysed and new data is ingested for training, testing, validation and deployment of new model with the 
 aim of constantly improve the Machine Learning.
+<img src="Frontend.png">
 
 ## To run the project
 ### Machine Learning Pipeline
