@@ -1,5 +1,6 @@
 # machine-learning-full-implementation
 This project aims to demostrate how to build Machine Learning Pipeline, integrate it to backend and frontend Applications.
+<img src="ML.png">
 
 ## How it works
 The first case of many that will be included in this project has iris dataset for Machine Learning. Form is filled up in frontend application and 
