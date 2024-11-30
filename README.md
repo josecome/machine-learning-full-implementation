@@ -18,7 +18,7 @@ py run.py
 ```
 or
 ```sh
-flask --app hello run
+flask --app app run
 ```
 
 ### Backend API (Django Rest Framework)

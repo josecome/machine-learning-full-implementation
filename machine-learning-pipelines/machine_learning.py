@@ -36,15 +36,27 @@ class MLModels:
             iris = datasets.load_iris()
             # iris = MLDataset.load_dataset()
 
-        X = iris.data[:, :4]
-        y = iris.target
+        return iris
+    
+
+    # Data preparation
+    def processing_data(cls, new_data):        
+        data = cls.load_data(new_data)
+        # Data validation
+
+        # End of data validation
+        # start of transformation and cleaning
+
+        # end of transformation
+        X = data.data[:, :4]
+        y = data.target
 
         return train_test_split(X, y, test_size=0.33, random_state=42)
 
 
     @classmethod
     def train_models(cls, new_data):
-        X_train, X_test, y_train, y_test = cls.load_data(new_data)
+        X_train, X_test, y_train, y_test = cls.processing_data(new_data)
         cls.X_test = X_test
         cls.y_test = y_test
 
