@@ -40,14 +40,16 @@ class MLModels:
     
 
     # Data preparation
+    @classmethod
     def processing_data(cls, new_data):        
         data = cls.load_data(new_data)
         # Data validation
 
         # End of data validation
-        # start of transformation and cleaning
 
-        # end of transformation
+        # start of data transformation and cleaning
+
+        # end of data transformation and cleaning
         X = data.data[:, :4]
         y = data.target
 
