@@ -16,7 +16,18 @@ class MLDataset():
         pass
 
     def load_dataset():
-        pass
+        # iris will be replaced by saved dataset
+        return datasets.load_iris()
+
+
+class PersistedModel():
+    def save_model(data):
+        with open('model.pkl', 'wb') as f:
+            pickle.dump(data, f) 
+
+    def load_model():
+        with open('model.pkl', 'rb') as f:
+            return pickle.load(f)
 
 
 # Models
@@ -32,12 +43,9 @@ class MLModels:
             url = 'https://raw.githubusercontent.com/josecome/data-science-with-r-and-python/refs/heads/main/iris.csv'
             iris = pd.read_csv(url, index_col=0)
             # MLDataset.save_dataset(iris)
-        else:
-            iris = datasets.load_iris()
-            # iris = MLDataset.load_dataset()
-
-        return iris
-    
+            return iris
+        
+        return MLDataset.load_dataset()
 
     # Data preparation
     @classmethod
@@ -115,14 +123,12 @@ class MLModels:
         cls.ml_model = clf1
 
         # Save the model
-        with open('model.pkl', 'wb') as f:
-            pickle.dump(clf1, f) 
+        PersistedModel.save_model(clf1)
 
-
+    # Load model
     @classmethod
     def load_model(cls):
-        with open('model.pkl', 'rb') as f:
-            cls.ml_model = pickle.load(f)
+        cls.ml_model = PersistedModel.load_model()
 
 
 # MLModels.test_and_evaluate(False)

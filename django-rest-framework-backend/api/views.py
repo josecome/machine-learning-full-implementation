@@ -56,6 +56,5 @@ class ProcessRequest(APIView):
                 preference_serializer.save()
             
                 return Response(result, status=status.HTTP_201_CREATED)
-        
-        error = "Error..."
+            # error = "Error..."
         return Response(person_serializer.errors, status=status.HTTP_400_BAD_REQUEST)

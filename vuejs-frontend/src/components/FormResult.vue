@@ -30,6 +30,7 @@ function submit() {
   placeholder="Full Name"
   aria-label="Fullname"
   aria-describedby="basic-addon1"
+  required
   >
 </div>
 <div>
